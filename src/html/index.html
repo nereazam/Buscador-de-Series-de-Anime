@@ -3,21 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Evaluacion intermedia</title>
+    <title>Evaluacion Final del módulo 2</title>
     <link
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="icon" href="./assets/images/favicon.png" />
   </head>
 
-  <body>  
-  <!-- <include src="./partials/header.html"></include>
-    <include src="./partials/main.html"></include>
-    <include src="./partials/footer.html"> </include> -->
-    
-    
-    <script src="./assets/js/main.js"> </script>
+  <body>
+    <header><h1>Buscador de Series de Anime</h1></header>
+    <main>
+      <form class="form">
+        <label for="series" id="series" class="form-control"></label>
+        <input
+          type="text"
+          class="js-input"
+          placeholder="Introduce aqui tu serie"
+          id="series"
+          name="series"
+        />
+      </form>
+      <button class="send js-search">Buscar</button>
+      <button class="reset js-reset">Reset</button>
+
+      <ul class="js-list"></ul>
+    </main>
+
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>
