@@ -1,47 +1,54 @@
 "use strict";
 
-//method: "POST",
-//headers: {"content-Type": "application/json" },
-// body: JSON.stringify(data),
-
 // SECCIÓN 1. ELEMENTOS DEL HTML
 const input = document.querySelector(".js-input");
 const reset = document.querySelector(".js-reset");
 const search = document.querySelector(".js-search");
-const listUl = document.querySelector(".js-list");
+const cards= document.querySelector(".js-cards");
+const img= document.querySelector(".js-img");
 
-// SECCIÓN 2. VARIABLES GLOBALES
 let result = [];
 
-// SECCIÓN 3. FUNCIONES
 function renderFilms() {
   let html = "";
-
-  for (const film of result) {
-    html += `<li>${film.tittle}</li>`;
-    html += `<li>${film.images}</li>`;
-
-    for (const image of film.images) {
-      console.log(film.images);
-    }
-  }
-
-  listUl.innerHTML = html;
+  for (const anime of result) {
+    html += `<article class= "list js-list-anime" id="${anime.mal_id}">`;
+    html += `<img src="${anime.images.jpg.small_image_url}
+    alt="img"
+    class=" js-img" />`;
+    html += `<p class= "js title">${anime.title}</p>`
+    html += `</article>`};
+cards.innerHTML = html ;
+callServer();
 }
-// SECCIÓN 4. FUNCIONES DE EVENTOS
 
-// SECCIÓN 5. EVENTOS
-
-search.addEventListener("click", (event) => {
+function callServer  (event) {
   event.preventDefault();
-
-  const userElection = input.value;
-
+  console.log("Hola");
+  let userElection = input.value;
   fetch(`https://api.jikan.moe/v4/anime?q=${userElection}`)
     .then((response) => response.json())
     .then((json) => {
-      console.log(json);
-      result = json.data;
-      renderFilms();
+      console.log(json.data);
+      result =  json.data;
     });
-});
+    renderFilms();
+    callServer();
+};
+search.addEventListener("click", callServer);
+
+
+
+
+
+
+//if src= "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
+//innerHTML="https://via.placeholder.com/210x295/ffffff/666666/?text=TV"
+ 
+
+
+
+
+
+
+
