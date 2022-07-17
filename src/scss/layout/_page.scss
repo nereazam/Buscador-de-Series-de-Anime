@@ -1,13 +1,15 @@
-.cards {}
-
 body {
     background-color: rgb(215, 175, 182);
 }
 
 h1 {
     color: rgb(108, 215, 237);
-    margin: 10px;
-    font-size: 20px;
+    margin: 20px;
+    font-size: 30px;
+}
+
+form {
+    display: inline;
 }
 
 .search {
@@ -32,27 +34,72 @@ h1 {
 
 }
 
-form {
-    display: inline;
-}
-
 .input {
 
     background-color: black;
-
-    margin: 10px;
-
+    margin: 20px;
     color: white;
     border-color: rgb(108, 215, 237);
-    width: 400px;
+    width: 60%;
     height: 20px;
     border-radius: 3px;
 
 }
 
-.title {
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 35% 60%;
+    margin: 10px;
+
+}
+
+
+
+.box-1 {
+    background-color: rgb(207, 224, 112);
+    border: 3px solid rgb(207, 224, 112);
+    color: white;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.box-2 {
+    background-color: rgb(191, 84, 191);
+    border: 3px solid rgb(191, 84, 191);
+    color: white;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+.box-3 {
+
+    border: 3px solid rgb(207, 224, 112);
+    border-radius: 3px;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+.box-4 {
+
+    border: 3px solid rgb(191, 84, 191);
+    border-radius: 3px;
+    padding: 10px;
+    margin: 5px;
+    min-height: 400px;
+}
+
+
+
+.titles {
     color: grey;
-    width: 100px;
+    width: 300px;
+    font-size: 14px;
 }
 
 .favorites {
@@ -63,26 +110,9 @@ form {
     border-radius: 2px;
 }
 
-.content {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    align-items: center;
-
-}
-
-.result-container {
-    width: 70vw;
-
-}
-
-.result-fav {
-    width: 30vw;
-}
-
 
 .anime--favorite {
 
     border: 20px;
-    border-color: purple;
+    border-color: red;
 }
