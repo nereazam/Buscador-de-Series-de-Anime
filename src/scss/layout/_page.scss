@@ -79,7 +79,9 @@ form {
 
 
 .box-3 {
-
+    display: grid;
+    grid-template-columns: 60%;
+    justify-content: center;
     border: 3px solid #ebff9f;
     border-radius: 3px;
     padding: 10px;
@@ -96,13 +98,14 @@ form {
     padding: 10px;
     margin: 5px;
     min-height: 400px;
+    padding-top: 15px;
 }
 
 
 
 .titles {
-    color: grey;
-    width: 150px;
+    color: rgb(189, 189, 189);
+    width: 140px;
     font-size: 12px;
     text-align: center;
 }
