@@ -9,7 +9,6 @@ const img = document.querySelector(".js-img");
 const left = document.querySelector(".js-section-fav");
 const cardTitle = document.querySelector(".js-title");
 
-//constantes
 let result = [];
 let favorites = [];
 
@@ -27,34 +26,31 @@ function callServer(event) {
   renderFilms();
 }
 
-search.addEventListener("click", callServer);
-//funcion pintado tarjetas
-
 function renderFilms() {
   let html = "";
   let classFavorite = "";
-
   for (const anime of result) {
     const favoriteFoundIndex = favorites.findIndex(
       (fav) => anime.id === fav.id
     );
     if (favoriteFoundIndex !== -1) {
       classFavorite = "anime--favorite";
+      left.innerHTML += favorites;
     } else {
       classFavorite = "";
     }
 
     html += `<article class= "card ${classFavorite} js-list-anime" id="${anime.mal_id}">`;
-    /*if (
-      (anime.image =
-        "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png")
+    if (
+      anime.images.jpg.image_url ===
+      "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
     ) {
-      html += `<img src="https://via.placeholder.com/210x320/f88ffff/866666/?text=IMG"/> `;
-    } else {*/
-    html += `<img src="${anime.images.jpg.image_url}"
+      html += `<img src="https://via.placeholder.com/210x320/f88ffff/866666/?text=IMG" alt="img" class="js-placeholder)/>`;
+    } else {
+      html += `<img src="${anime.images.jpg.image_url}"
     alt="img"
     class=" js-img" />`;
-
+    }
     html += `<p class= "titles js-title">${anime.title}</p>`;
     html += `</article>`;
 
@@ -86,14 +82,15 @@ const listenerSeries = (ev) => {
 };
 
 //funcion del reset
+search.addEventListener("click", callServer);
+
 const handelReset = (event) => {
   event.preventDefault();
   input.value = "";
 };
+
 reset.addEventListener("click", handelReset);
 
-//funcion local storage
-/*
 function onLocal() {
   const dataLocalStorage = JSON.parse(localStorage.getItem("data"));
   if (dataLocalStorage === null) {
@@ -101,4 +98,4 @@ function onLocal() {
     callServer();
   }
 }
-onLocal();*/
+onLocal();
