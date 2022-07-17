@@ -6,7 +6,7 @@ const reset = document.querySelector(".js-reset");
 const search = document.querySelector(".js-search");
 const cards = document.querySelector(".js-cards");
 const img = document.querySelector(".js-img");
-const left = document.querySelector(".js-section-fav");
+const left = document.querySelector(".js-fav");
 const cardTitle = document.querySelector(".js-title");
 
 let result = [];
@@ -27,7 +27,7 @@ function callServer(event) {
     });
   renderFilms(result);
 }
-/*
+
 function renderFavourites() {
   let favorite = "";
   html += `<article class= "card ${classFavorite} js-list-anime" id="${anime.mal_id}">`;
@@ -44,9 +44,9 @@ class=" img js-img" />`;
   html += `<p class= "titles js-title">${anime.title}</p>`;
   html += `</article>`;
 
-  cards.innerHTML = favorite;
+  left.innerHTML = favorite;
   listenerSeries();
-}*/
+}
 
 function renderFilms(favorites) {
   let html = "";
@@ -92,7 +92,7 @@ function handelClick(ev) {
   } else {
     favorites.splice(favoriteFound, 1);
   }
-  renderFilms(favorites);
+  renderFilms(result);
   listenerSeries();
 }
 //escuchador sobre cada card del array html
