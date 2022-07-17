@@ -29,6 +29,7 @@ function callServer(event) {
 function renderFilms() {
   let html = "";
   let classFavorite = "";
+
   for (const anime of result) {
     const favoriteFoundIndex = favorites.findIndex(
       (fav) => anime.id === fav.id
@@ -45,17 +46,21 @@ function renderFilms() {
       anime.images.jpg.image_url ===
       "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
     ) {
-      html += `<img src="https://via.placeholder.com/210x320/f88ffff/866666/?text=IMG" alt="img" class="js-placeholder)/>`;
+      html += `<img src="https://via.placeholder.com/120x100/f88ffff/866666/?text=IMG" alt="img" class="js-placeholder)/>`;
+      html += `<p class= "titles js-title">${anime.title}</p>;`;
+      html += `</article>`;
     } else {
-      html += `<img src="${anime.images.jpg.image_url}"
+      html += `<img src="${anime.images.jpg.image_url}";
     alt="img"
-    class=" js-img" />`;
+    class=" img js-img" />`;
+
+      html += `<p class= "titles js-title">${anime.title}</p>`;
+      html += `</article>`;
     }
-    html += `<p class= "titles js-title">${anime.title}</p>`;
-    html += `</article>`;
 
     cards.innerHTML = html;
   }
+
   listenerSeries();
 }
 
@@ -75,6 +80,7 @@ function handelClick(ev) {
 }
 
 const listenerSeries = (ev) => {
+  ev.preventDefault();
   const liFavorites = document.querySelectorAll(".js-list-anime");
   for (const li of liFavorites) {
     li.addEventListener("click", handelClick);
@@ -87,6 +93,7 @@ search.addEventListener("click", callServer);
 const handelReset = (event) => {
   event.preventDefault();
   input.value = "";
+  cards.innerHTML = "";
 };
 
 reset.addEventListener("click", handelReset);

@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(215, 175, 182);
+    background-color: rgb(17, 16, 16);
 }
 
 h1 {
@@ -58,27 +58,29 @@ form {
 
 
 .box-1 {
-    background-color: rgb(207, 224, 112);
-    border: 3px solid rgb(207, 224, 112);
-    color: white;
+    background-color: #ebff9f;
+    border: 3px solid #ebff9f;
+    color: black;
     border-radius: 3px;
     padding: 10px;
     margin: 5px;
+    text-align: center;
 }
 
 .box-2 {
     background-color: rgb(191, 84, 191);
     border: 3px solid rgb(191, 84, 191);
-    color: white;
+    color: black;
     border-radius: 3px;
     padding: 10px;
     margin: 5px;
+    text-align: center;
 }
 
 
 .box-3 {
 
-    border: 3px solid rgb(207, 224, 112);
+    border: 3px solid #ebff9f;
     border-radius: 3px;
     padding: 10px;
     margin: 5px;
@@ -86,7 +88,9 @@ form {
 
 
 .box-4 {
-
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: center;
     border: 3px solid rgb(191, 84, 191);
     border-radius: 3px;
     padding: 10px;
@@ -98,8 +102,9 @@ form {
 
 .titles {
     color: grey;
-    width: 300px;
-    font-size: 14px;
+    width: 150px;
+    font-size: 12px;
+    text-align: center;
 }
 
 .favorites {
@@ -115,4 +120,17 @@ form {
 
     border: 20px;
     border-color: red;
+}
+
+
+.card {
+
+
+    height: 200px;
+}
+
+.img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
 }
