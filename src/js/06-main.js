@@ -32,23 +32,28 @@ function handelClickServer(ev) {
 search.addEventListener("click", handelClickServer);
 
 function renderFavourites() {
-  let favoritesList = "";
-  html += `<article class= "card ${classFavorite} js-list-anime" id="${anime.mal_id}">`;
-  if (
-    anime.images.jpg.image_url ===
-    "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
-  ) {
-    html += `<img src="https://via.placeholder.com/120x100/f88ffff/866666/?text=IMG" alt="img" class="js-placeholder)/>`;
-  } else {
-    html += `<img src="${anime.images.jpg.image_url}";
+  let html = "";
+
+  for (const anime of favoritesList) {
+    html += `<article class= "card js-list-anime" id="${anime.mal_id}">`;
+    html += `<i class="icon fa-solid fa-circle-xmark"></i>`;
+    if (
+      anime.images.jpg.image_url ===
+      "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
+    ) {
+      html += `<img src="https://via.placeholder.com/120x100/f88ffff/866666/?text=IMG" alt="img" class="js-placeholder)/>`;
+    } else {
+      html += `<img src="${anime.images.jpg.image_url}";
 alt="img"
 class=" img js-img" />`;
-  }
-  html += `<p class= "titles js-title">${anime.title}</p>`;
-  html += `</article>`;
+    }
 
-  left.innerHTML = favoritesList;
-  listenerSeries();
+    html += `<p class= "titles js-title">${anime.title}</p>`;
+    html += `</article>`;
+  }
+
+  left.innerHTML = html;
+  //console.log(favoritesList, "holaaaaaaaaaaaaaaaaaa");
 }
 
 function renderFilms() {
@@ -56,7 +61,6 @@ function renderFilms() {
   let classFavorite = "";
 
   //con esto añdo la clase para resaltar el favorito
-  console.log(favoritesList);
 
   for (const anime of result) {
     const favoriteFoundIndex = favoritesList.findIndex(
@@ -74,7 +78,7 @@ function renderFilms() {
       anime.images.jpg.image_url ===
       "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
     ) {
-      html += `<img src="https://via.placeholder.com/120x100/f88ffff/866666/?text=IMG" alt="img" class="  js-placeholder)/>`;
+      html += `<img src="https://via.placeholder.com/120x100/f88ffff/866666/?text=IMG" alt="img" class=" ${classFavorite} js-placeholder)/>`;
     } else {
       html += `<img src="${anime.images.jpg.image_url}";
     alt="img"
@@ -104,6 +108,7 @@ function handelClick(ev) {
 
   renderFilms(result);
   listenerSeries();
+  renderFavourites();
 
   localStorage.setItem("data", JSON.stringify(favoritesList));
 }
@@ -134,3 +139,4 @@ function onLocal() {
   }
 }
 onLocal();
+console.log(favoritesList);
