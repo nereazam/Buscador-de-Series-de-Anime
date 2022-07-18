@@ -93,6 +93,7 @@ form {
     display: grid;
     grid-template-columns: 30% 30% 30%;
     justify-content: center;
+    align-items: center;
     border: 3px solid rgb(191, 84, 191);
     border-radius: 3px;
     padding: 10px;
@@ -119,8 +120,8 @@ form {
 }
 
 
-.anime--favorite {
-
+.anime-favorite {
+    background-color: rgb(125, 59, 125);
     border: 5px;
     border-color: rgb(108, 215, 237);
     color: rgb(108, 215, 237);
@@ -128,7 +129,10 @@ form {
 
 
 .card {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     height: 200px;
 }

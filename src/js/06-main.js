@@ -10,26 +10,29 @@ const left = document.querySelector(".js-fav");
 const cardTitle = document.querySelector(".js-title");
 
 let result = [];
-let favorites = [];
+let favoritesList = [];
 
 //funcion del API
-function callServer(event) {
-  event.preventDefault();
-
+function callServer() {
   let userElection = input.value;
   fetch(`https://api.jikan.moe/v4/anime?q=${userElection}`)
     .then((response) => response.json())
     .then((json) => {
-      console.log(json.data);
       result = json.data;
-      localStorage.setItem("data", JSON.stringify(favorites));
-      console.log("hay datos en el local storage");
+
+      renderFilms(result);
     });
-  renderFilms(result);
+}
+function handelClickServer(ev) {
+  ev.preventDefault();
+  callServer();
+  listenerSeries();
 }
 
+search.addEventListener("click", handelClickServer);
+
 function renderFavourites() {
-  let favorite = "";
+  let favoritesList = "";
   html += `<article class= "card ${classFavorite} js-list-anime" id="${anime.mal_id}">`;
   if (
     anime.images.jpg.image_url ===
@@ -44,21 +47,24 @@ class=" img js-img" />`;
   html += `<p class= "titles js-title">${anime.title}</p>`;
   html += `</article>`;
 
-  left.innerHTML = favorite;
+  left.innerHTML = favoritesList;
   listenerSeries();
 }
 
-function renderFilms(favorites) {
+function renderFilms() {
   let html = "";
   let classFavorite = "";
 
   //con esto añdo la clase para resaltar el favorito
+  console.log(favoritesList);
+
   for (const anime of result) {
-    const favoriteFoundIndex = favorites.findIndex(
-      (fav) => anime.mal_id === fav.id
+    const favoriteFoundIndex = favoritesList.findIndex(
+      (fav) => anime.mal_id === fav.mal_id
     );
+
     if (favoriteFoundIndex !== -1) {
-      classFavorite = "anime--favorite";
+      classFavorite = "anime-favorite";
     } else {
       classFavorite = "";
     }
@@ -68,13 +74,13 @@ function renderFilms(favorites) {
       anime.images.jpg.image_url ===
       "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
     ) {
-      html += `<img src="https://via.placeholder.com/120x100/f88ffff/866666/?text=IMG" alt="img" class="js-placeholder)/>`;
+      html += `<img src="https://via.placeholder.com/120x100/f88ffff/866666/?text=IMG" alt="img" class="  js-placeholder)/>`;
     } else {
       html += `<img src="${anime.images.jpg.image_url}";
     alt="img"
     class=" img js-img" />`;
     }
-    html += `<p class= "titles js-title">${anime.title}</p>`;
+    html += `<p class= "titles ${classFavorite} js-title">${anime.title}</p>`;
     html += `</article>`;
 
     cards.innerHTML = html;
@@ -85,15 +91,21 @@ function renderFilms(favorites) {
 //funcion que encuentra el click sobr el favorito y lo añade o lo quita del array favorites
 function handelClick(ev) {
   const idSelected = parseInt(ev.currentTarget.id);
+
   const animeFound = result.find((select) => select.mal_id === idSelected);
-  const favoriteFound = favorites.findIndex((fav) => fav.mal_id === idSelected);
+  const favoriteFound = favoritesList.findIndex(
+    (fav) => fav.mal_id === idSelected
+  );
   if (favoriteFound === -1) {
-    favorites.push(animeFound);
+    favoritesList.push(animeFound);
   } else {
-    favorites.splice(favoriteFound, 1);
+    favoritesList.splice(favoriteFound, 1);
   }
+
   renderFilms(result);
   listenerSeries();
+
+  localStorage.setItem("data", JSON.stringify(favoritesList));
 }
 //escuchador sobre cada card del array html
 const listenerSeries = () => {
@@ -104,8 +116,6 @@ const listenerSeries = () => {
 };
 
 //funcion del reset
-search.addEventListener("click", callServer);
-
 const handelReset = (event) => {
   event.preventDefault();
   input.value = "";
@@ -113,12 +123,12 @@ const handelReset = (event) => {
 };
 
 reset.addEventListener("click", handelReset);
-
+// funcion Local Storage
 function onLocal() {
   const dataLocalStorage = JSON.parse(localStorage.getItem("data"));
-  if (dataLocalStorage === null) {
-    favorites = dataLocalStorage;
-    renderFilms(favorites);
+  if (dataLocalStorage !== null) {
+    favoritesList = dataLocalStorage;
+    renderFilms(favoritesList);
   } else {
     callServer();
   }
