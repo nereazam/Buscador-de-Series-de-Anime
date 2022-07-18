@@ -53,18 +53,23 @@ function closeIcon(ev) {
   const erasableFav = favoritesList.find(
     (select) => select.mal_id === favSelected
   );
+  //const favoriteFound = favoritesList.findIndex(
+  // (fav) => fav.mal_id === favSelected);
 
   if (favSelected) {
     favoritesList.splice(erasableFav, 1);
   } else {
   }
 }
+
+//escuchadora de icon
 function listenIcon() {
   const liIcon = document.querySelectorAll(".js-icon");
   for (const li of liIcon) {
     li.addEventListener("click", closeIcon);
   }
 }
+
 // funcion Local Storage
 function onLocal() {
   const dataLocalStorage = JSON.parse(localStorage.getItem("data"));
