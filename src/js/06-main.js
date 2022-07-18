@@ -8,7 +8,7 @@ const cards = document.querySelector(".js-cards");
 const img = document.querySelector(".js-img");
 const left = document.querySelector(".js-fav");
 const cardTitle = document.querySelector(".js-title");
-
+const icon = document.querySelector(".js-icon");
 let result = [];
 let favoritesList = [];
 
@@ -36,7 +36,7 @@ function renderFavourites() {
 
   for (const anime of favoritesList) {
     html += `<article class= "card js-list-anime" id="${anime.mal_id}">`;
-    html += `<i class="icon fa-solid fa-circle-xmark"></i>`;
+    html += `<i class="icon js-icon fa-solid fa-circle-xmark"></i>`;
     if (
       anime.images.jpg.image_url ===
       "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
@@ -53,7 +53,6 @@ class=" img js-img" />`;
   }
 
   left.innerHTML = html;
-  //console.log(favoritesList, "holaaaaaaaaaaaaaaaaaa");
 }
 
 function renderFilms() {
@@ -140,3 +139,22 @@ function onLocal() {
 }
 onLocal();
 console.log(favoritesList);
+////////funcion para icono cerrar favoritos
+function closeIcon(ev) {
+  const favSelected = parseInt(ev.currentTarget.id);
+
+  const erasableFav = favoritesList.find(
+    (select) => select.mal_id === favSelected
+  );
+
+  if (favSelected) {
+    favoritesList.splice(erasableFav, 1);
+  } else {
+  }
+}
+function listenIcon() {
+  const liIcon = document.querySelectorAll(".js-icon");
+  for (const li of liIcon) {
+    li.addEventListener("click", closeIcon);
+  }
+}
