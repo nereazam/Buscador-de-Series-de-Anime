@@ -22,6 +22,7 @@ function renderFavourites() {
   }
 
   left.innerHTML = html;
+  listenIcon();
 }
 
 function renderFilms() {
@@ -57,6 +58,32 @@ function renderFilms() {
 
     cards.innerHTML = html;
   }
-
   listenerSeries();
 }
+//funcion que encuentra el click sobr el favorito y lo añade o lo quita del array favorites
+function handelClick(ev) {
+  const idSelected = parseInt(ev.currentTarget.id);
+
+  const animeFound = result.find((select) => select.mal_id === idSelected);
+  const favoriteFound = favoritesList.findIndex(
+    (fav) => fav.mal_id === idSelected
+  );
+  if (favoriteFound === -1) {
+    favoritesList.push(animeFound);
+  } else {
+    favoritesList.splice(favoriteFound, 1);
+  }
+
+  renderFilms(result);
+  listenerSeries();
+  renderFavourites();
+
+  localStorage.setItem("data", JSON.stringify(favoritesList));
+}
+//escuchador sobre cada card del array html
+const listenerSeries = () => {
+  const liFavorites = document.querySelectorAll(".js-list-anime");
+  for (const li of liFavorites) {
+    li.addEventListener("click", handelClick);
+  }
+};

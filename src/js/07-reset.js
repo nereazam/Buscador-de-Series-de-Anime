@@ -1,4 +1,6 @@
-"use strict"; //funcion del reset
+"use strict";
+
+//funcion del reset
 const handelReset = (event) => {
   event.preventDefault();
   input.value = "";
