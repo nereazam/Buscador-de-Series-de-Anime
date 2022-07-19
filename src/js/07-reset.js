@@ -12,10 +12,12 @@ reset.addEventListener("click", handelReset);
 ///funcion del boton erase de favoritos
 function handelErase(ev) {
   ev.preventDefault();
-  favoritesList.slice(0);
   favoritesList = "";
   // console.log("hello")
+
   renderFavourites();
+  erase.classList.add("hiden");
+  localStorage.removeItem(" dataLocalStorage");
 }
 
 erase.addEventListener("click", handelErase);

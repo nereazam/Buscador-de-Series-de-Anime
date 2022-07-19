@@ -1,4 +1,5 @@
 "use strict";
+
 //funcion del API
 function callServer() {
   let userElection = input.value;
