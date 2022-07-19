@@ -8,5 +8,7 @@ const img = document.querySelector(".js-img");
 const left = document.querySelector(".js-fav");
 const cardTitle = document.querySelector(".js-title");
 const icon = document.querySelector(".js-icon");
+const erase = document.querySelector(".js-erase");
+
 let result = [];
 let favoritesList = [];

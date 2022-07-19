@@ -38,6 +38,16 @@ form {
 
 }
 
+.erase {
+    background-color: rgb(93, 249, 93);
+    width: 80px;
+    height: 30px;
+    color: aliceblue;
+    border-radius: 2px;
+    border: none;
+    margin: 5px;
+}
+
 .input {
 
     background-color: black;
@@ -63,7 +73,7 @@ form {
 
 .box-1 {
     background-color: palevioletred;
-    border: 3px solidpalevioletred;
+    border: 3px solid palevioletred;
     color: black;
     border-radius: 3px;
     padding: 10px;
@@ -72,6 +82,9 @@ form {
 }
 
 .box-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #ebff9f;
     border: 3px solid #ebff9f;
     color: black;
@@ -79,6 +92,7 @@ form {
     padding: 10px;
     margin: 5px;
     text-align: center;
+
 }
 
 
@@ -109,10 +123,19 @@ form {
 
 .icon {
     color: palevioletred;
+    font-size: 30px;
+    margin-right: 10px;
 }
 
 .titles {
     color: rgb(189, 189, 189);
+    width: 120px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.titles2 {
+    color: rgb(93, 249, 93);
     width: 120px;
     font-size: 12px;
     text-align: center;
@@ -131,6 +154,7 @@ form {
 
     background-color: palevioletred;
     color: rgb(108, 215, 237);
+
 }
 
 
@@ -141,6 +165,19 @@ form {
     align-items: center;
     height: 200px;
     margin: 3px;
+
+}
+
+.card2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    margin: 3px;
+    border: 8px solid rgb(93, 249, 93);
+
+
 }
 
 .img {

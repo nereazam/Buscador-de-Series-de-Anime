@@ -4,8 +4,8 @@ function renderFavourites() {
   let html = "";
 
   for (const anime of favoritesList) {
-    html += `<article class= "card js-list-anime" id="${anime.mal_id}">`;
-    html += `<i class="icon js-icon fa-solid fa-circle-xmark"></i>`;
+    html += `<article class= "card2 js-list-anime" id="${anime.mal_id}">`;
+
     if (
       anime.images.jpg.image_url ===
       "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
@@ -17,7 +17,8 @@ function renderFavourites() {
   class=" img js-img" />`;
     }
 
-    html += `<p class= "titles js-title">${anime.title}</p>`;
+    html += `<p class= "titles2 js-title">${anime.title}</p>`;
+    html += `<i class="icon js-icon fa-solid fa-circle-xmark"></i>`;
     html += `</article>`;
   }
 
@@ -47,14 +48,16 @@ function renderFilms() {
       anime.images.jpg.image_url ===
       "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
     ) {
-      html += `<img src="https://via.placeholder.com/120x100/f88ffff/866666/?text=IMG" alt="img" class=" ${classFavorite} js-placeholder)/>`;
+      html += `<img src="https://via.placeholder.com/120x100/f88ffff/866666/?text=IMG" alt="img" js-placeholder)/>`;
+      html += `<p class= "titles ${classFavorite} js-title">${anime.title}</p>`;
+      html += `</article>`;
     } else {
       html += `<img src="${anime.images.jpg.image_url}";
       alt="img"
       class=" img js-img" />`;
+      html += `<p class= "titles ${classFavorite} js-title">${anime.title}</p>`;
+      html += `</article>`;
     }
-    html += `<p class= "titles ${classFavorite} js-title">${anime.title}</p>`;
-    html += `</article>`;
 
     cards.innerHTML = html;
   }
