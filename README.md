@@ -14,12 +14,12 @@ Its a web application to search for anime series, which allows us to select the 
 
 ## Used technologies
 
-- [Visual Studio Node](https://code.visualstudio.com/download) Version: May 2022
+- [Visual Studio Code](https://code.visualstudio.com/download) 
 - [Git](https://git-scm.com/download/mac) Version: 2.36.1
 - [Node JS](https://nodejs.org/es/download/) Version: v14.19.3
 - [Git Hub](https://github.com/)
 
----
+--
 
 
 ## Recursos
