@@ -10,6 +10,7 @@
 Its a web application to search for anime series, which allows us to select the series as favourites and save them.
 
 
+Enjoy!
 
 
 ## Used technologies
