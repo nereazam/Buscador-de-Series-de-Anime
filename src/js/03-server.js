@@ -6,10 +6,13 @@ function callServer() {
   fetch(`https://api.jikan.moe/v4/anime?q=${userElection}`)
     .then((response) => response.json())
     .then((json) => {
-      result = json.data;
+      result = json.data.map((each) => {
+        return { id: each.mal_id, title: each.title, images: each.images };
+      });
 
       renderFilms(result);
-    });
+    })
+    .catch((error) => console.log(`Ha sucedido un error: ${error}`));
 }
 
 function handelClickServer(ev) {

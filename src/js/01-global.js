@@ -9,6 +9,7 @@ const left = document.querySelector(".js-fav");
 const cardTitle = document.querySelector(".js-title");
 const icon = document.querySelector(".js-icon");
 const erase = document.querySelector(".js-erase");
-
+const log = document.querySelector(".js-log");
+const warning = document.querySelector(".js-warning");
 let result = [];
 let favoritesList = [];

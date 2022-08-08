@@ -37,13 +37,20 @@ function renderFilms() {
       (fav) => anime.mal_id === fav.mal_id
     );
 
-    if (favoriteFoundIndex !== -1) {
-      classFavorite = "anime-favorite";
-    } else {
-      classFavorite = "";
-    }
+    //if (favoriteFoundIndex !== -1) {
+    //  classFavorite = "anime-favorite";
+    //} else {
+    // classFavorite = "";
+    // }
+
+    favoriteFoundIndex !== -1
+      ? (classFavorite = "anime-favorite")
+      : (classFavorite = "");
+
     // con esto pinto cada card
+
     html += `<article class= "card ${classFavorite} js-list-anime" id="${anime.mal_id}">`;
+    html += `<p class= "titles" >${anime.type}</p>`;
     if (
       anime.images.jpg.image_url ===
       "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
@@ -90,3 +97,11 @@ const listenerSeries = () => {
     li.addEventListener("click", handelClick);
   }
 };
+
+function handelLog() {
+  for (const li of favoritesList) {
+    console.log(li.title);
+  }
+}
+
+log.addEventListener("click", handelLog);
