@@ -7,9 +7,13 @@ function callServer() {
     .then((response) => response.json())
     .then((json) => {
       result = json.data.map((each) => {
-        return { id: each.mal_id, title: each.title, images: each.images };
+        return { mal_id: each.mal_id, title: each.title, images: each.images };
       });
-
+      if (result.length === 0) {
+        warning.innerHTML = "No images found";
+      } else {
+        warning.innerHTML = "";
+      }
       renderFilms(result);
     })
     .catch((error) => console.log(`Ha sucedido un error: ${error}`));

@@ -7,7 +7,7 @@
 
 ## Funcionalities
 
-Its a web application to search for anime series, which allows us to select the series as favourites and save them.
+Its a web application to search for anime series, which allows us to select our favourites series and save them.
 
 
 Enjoy!
@@ -23,13 +23,13 @@ Enjoy!
 --
 
 
-## Recursos
+## API
 
  <a href="https://docs.api.jikan.moe/" target="_blank">API de Jikan para la búsqueda de series de anime </a>
 
+## Recursos
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>
 
-<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/gulp/gulp-plain.svg" alt="gulp" width="40" height="40"/> 
 
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> 
  
