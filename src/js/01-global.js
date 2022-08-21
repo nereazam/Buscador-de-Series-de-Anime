@@ -10,6 +10,6 @@ const cardTitle = document.querySelector(".js-title");
 const icon = document.querySelector(".js-icon");
 const erase = document.querySelector(".js-erase");
 const log = document.querySelector(".js-log");
-const warning = document.querySelector(".js-warning");
+const ad = document.querySelector(".js-ad");
 let result = [];
 let favoritesList = [];

@@ -18,6 +18,7 @@ function renderFavourites() {
     }
 
     html += `<p class= "titles2 js-title">${anime.title}</p>`;
+
     html += `<i class="icon js-icon fa-solid fa-circle-xmark"></i>`;
     html += `</article>`;
   }
@@ -105,3 +106,18 @@ function handelLog() {
 }
 
 log.addEventListener("click", handelLog);
+
+const removeMsg = () => (ad.innerHTML = "");
+
+function notFound() {
+  const datas = result.filter((item) =>
+    item.title.toLowerCase().includes(search.value.toLowerCase())
+  );
+
+  if (datas.length === 0) {
+    ad.innerHTML = "¡Introduce un título!";
+    setTimeout(removeMsg, 3000);
+  } else {
+    ad.innerHTML = "¡Título no encontrado!";
+  }
+}

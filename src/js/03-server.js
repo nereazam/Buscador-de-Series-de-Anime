@@ -3,26 +3,30 @@
 //funcion del API
 function callServer() {
   let userElection = input.value;
+
   fetch(`https://api.jikan.moe/v4/anime?q=${userElection}`)
     .then((response) => response.json())
     .then((json) => {
       result = json.data.map((each) => {
-        return { mal_id: each.mal_id, title: each.title, images: each.images };
+        return {
+          mal_id: each.mal_id,
+          title: each.title,
+          images: each.images,
+          type: each.type,
+        };
       });
-      if (result.length === 0) {
-        warning.innerHTML = "No images found";
-      } else {
-        warning.innerHTML = "";
-      }
-      renderFilms(result);
-    })
-    .catch((error) => console.log(`Ha sucedido un error: ${error}`));
-}
 
+      renderFilms(result);
+    });
+
+  //.catch((error) => console.log(`Ha sucedido un error: ${error}`))
+}
 function handelClickServer(ev) {
   ev.preventDefault();
   callServer();
   listenerSeries();
+
+  notFound();
 }
 search.addEventListener("click", handelClickServer);
 

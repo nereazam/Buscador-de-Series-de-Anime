@@ -7,26 +7,25 @@ body {
 }
 
 h1 {
-    color: rgb(108, 215, 237);
+    color: rgb(91, 195, 216);
     margin: 20px;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 form {
     display: inline;
 }
 
-
-
-
 .search {
-    background-color: rgb(108, 215, 237);
-    width: 60px;
-    height: 20px;
+    background-color: rgb(31, 137, 158);
+    width: 80px;
+    height: 30px;
     color: aliceblue;
     border-radius: 2px;
     border: none;
     margin: 10px;
+    font-size: 18px;
+    ;
 
 }
 
@@ -35,13 +34,14 @@ form {
 }
 
 .reset {
-    background-color: rgb(108, 215, 237);
-    width: 60px;
-    height: 20px;
+    background-color: rgb(31, 137, 158);
+    width: 80px;
+    height: 30px;
     color: aliceblue;
     border-radius: 2px;
     border: none;
     margin: 10px;
+    font-size: 18px;
 
 }
 
@@ -60,7 +60,7 @@ form {
     background-color: black;
     margin: 20px;
     color: white;
-    border-color: rgb(108, 215, 237);
+    border-color: rgb(31, 137, 158);
     width: 60%;
     height: 20px;
     border-radius: 3px;
@@ -86,6 +86,7 @@ form {
     padding: 10px;
     margin: 5px;
     text-align: center;
+    font-size: 24px;
 }
 
 .box-2 {
@@ -99,6 +100,7 @@ form {
     padding: 10px;
     margin: 5px;
     text-align: center;
+    font-size: 24px;
 
 }
 
@@ -112,6 +114,7 @@ form {
     border-radius: 3px;
     padding: 10px;
     margin: 5px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 
@@ -126,6 +129,8 @@ form {
     margin: 5px;
     min-height: 400px;
     padding-top: 15px;
+    border: 6px solid rgb(93, 249, 93);
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .icon {
@@ -135,22 +140,22 @@ form {
 }
 
 .titles {
-    color: rgb(189, 189, 189);
+    color: white;
     width: 120px;
     font-size: 12px;
     text-align: center;
 }
 
 .titles2 {
-    color: rgb(93, 249, 93);
+    color: white;
     width: 120px;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
 }
 
 .favorites {
     color: rgb(108, 215, 237);
-    background-color: rgb(108, 215, 237);
+    background-color: rgb(31, 137, 158);
     border: 10px;
     border-color: aliceblue;
     border-radius: 2px;
@@ -159,8 +164,9 @@ form {
 
 .anime-favorite {
 
-    background-color: palevioletred;
-    color: rgb(108, 215, 237);
+    background-color: rgb(217, 145, 169);
+    border-radius: 5px;
+    color: rgb(9, 119, 141);
 
 }
 
@@ -171,7 +177,7 @@ form {
     justify-content: space-evenly;
     align-items: center;
     height: 200px;
-    margin: 3px;
+    margin: 6px;
 
 }
 
@@ -180,9 +186,10 @@ form {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height: 200px;
-    margin: 3px;
-    border: 8px solid rgb(93, 249, 93);
+    height: 150px;
+    margin: 10px;
+    border: 6px solid rgb(93, 249, 93);
+    border-radius: 5px;
 
 
 }
@@ -191,4 +198,12 @@ form {
     width: 150px;
     height: 150px;
     object-fit: contain;
+}
+
+.js-ad {
+    color: aqua;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 30px;
+    font-style: italic;
 }
