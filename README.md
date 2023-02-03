@@ -42,7 +42,7 @@ Enjoy!
 
 ## Contacto
 
-- GitHub [@nereazam](https://github.com/nereazam)
+- [ Linkedin ](https://www.linkedin.com/in/nerea-zamanillo-paton/)
 
 ## License
 
