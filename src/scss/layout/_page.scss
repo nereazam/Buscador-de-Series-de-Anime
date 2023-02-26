@@ -3,13 +3,14 @@ body {
     background-repeat: no-repeat;
     background-size: 100vw;
     background-color: black;
+    margin: 40px;
 
 }
 
 h1 {
     color: rgb(91, 195, 216);
-    margin: 20px;
-    font-size: 40px;
+    margin: 25px;
+    font-size: 35px;
 }
 
 form {
@@ -18,13 +19,13 @@ form {
 
 .search {
     background-color: rgb(31, 137, 158);
-    width: 80px;
-    height: 30px;
+    width: 130px;
+    height: 40px;
     color: aliceblue;
-    border-radius: 2px;
+    border-radius: 10px;
     border: none;
-    margin: 10px;
-    font-size: 18px;
+    margin: 15px;
+    font-size: 20px;
     ;
 
 }
@@ -35,22 +36,22 @@ form {
 
 .reset {
     background-color: rgb(31, 137, 158);
-    width: 80px;
-    height: 30px;
+    width: 130px;
+    height: 40px;
     color: aliceblue;
-    border-radius: 2px;
+    border-radius: 10px;
     border: none;
     margin: 10px;
-    font-size: 18px;
+    font-size: 20px;
 
 }
 
 .erase {
-    background-color: rgb(93, 249, 93);
+    background-color: rgb(86, 235, 86);
     width: 80px;
     height: 30px;
-    color: aliceblue;
-    border-radius: 2px;
+    color: white;
+    border-radius: 10px;
     border: none;
     margin: 5px;
 }
@@ -61,8 +62,8 @@ form {
     margin: 20px;
     color: white;
     border-color: rgb(31, 137, 158);
-    width: 60%;
-    height: 20px;
+    width: 40%;
+    height: 30px;
     border-radius: 3px;
 
 }
@@ -71,8 +72,8 @@ form {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 35% 60%;
-    margin: 10px;
+    grid-template-columns: 25% 75%;
+    margin: 15px;
 
 }
 
@@ -104,106 +105,107 @@ form {
 
 }
 
-
 .box-3 {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: left;
     align-items: center;
-    border: 3px solid palevioletred;
+    border: 10px solid palevioletred;
     border-radius: 3px;
-    padding: 10px;
+    padding: 5px;
     margin: 5px;
     font-family: 'Courier New', Courier, monospace;
+    overflow: auto;
 }
 
-
 .box-4 {
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    justify-content: space-evenly;
-    align-items: center;
-    border: 3px solid #ebff9f;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
     border-radius: 3px;
-    padding: 10px;
-    margin: 5px;
-    min-height: 400px;
-    padding-top: 15px;
-    border: 6px solid rgb(93, 249, 93);
+    border: 10px solid #ebff9f;
     font-family: 'Courier New', Courier, monospace;
+    padding: 5px;
+    margin: 5px;
+}
+
+.box-4 p {
+    width: 110%;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+
 }
 
 .icon {
     color: palevioletred;
-    font-size: 30px;
-    margin-right: 10px;
+    margin: 8px;
+    font-size: 2vw;
 }
 
 .titles {
     color: white;
-    width: 120px;
-    font-size: 12px;
     text-align: center;
+    font-size: 1vw;
 }
 
 .titles2 {
     color: white;
-    width: 120px;
-    font-size: 14px;
+    width: 60%;
+    font-size: 1vw;
     text-align: center;
 }
 
-.favorites {
-    color: rgb(108, 215, 237);
-    background-color: rgb(31, 137, 158);
-    border: 10px;
-    border-color: aliceblue;
-    border-radius: 2px;
-}
-
-
 .anime-favorite {
-
     background-color: rgb(217, 145, 169);
-    border-radius: 5px;
-    color: rgb(9, 119, 141);
+    color: rgb(8, 86, 102);
 
 }
-
 
 .card {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
-    height: 200px;
-    margin: 6px;
+    width: 200px;
+    height: 300px;
+    margin: 2%;
+    padding: 2%;
+    border: 10px solid#ebff9f;
+    border-radius: 10px;
+    object-fit: contain;
 
 }
 
 .card2 {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    height: 150px;
-    margin: 10px;
-    border: 6px solid rgb(93, 249, 93);
-    border-radius: 5px;
-
-
+    width: 90%;
+    margin: 3%;
+    border: 10px solid#ebff9f;
+    border-radius: 10px;
+    object-fit: contain;
 }
 
 .img {
     width: 150px;
-    height: 150px;
+    height: 200px;
     object-fit: contain;
+    margin: 5px;
+}
+
+.card p {
+    font-size: 1vw;
+    text-align: center;
+    background-color: transparent;
 }
 
 .js-ad {
     color: aqua;
-    font-size: 14px;
+    font-size: 1.2vw;
     font-family: 'Courier New', Courier, monospace;
-    margin-left: 30px;
+    margin-left: 5%;
     font-style: italic;
 }
