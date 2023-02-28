@@ -21,9 +21,14 @@ form {
     background-color: rgb(31, 137, 158);
     width: 130px;
     height: 40px;
+    width: 130px;
+    height: 40px;
     color: aliceblue;
     border-radius: 10px;
+    border-radius: 10px;
     border: none;
+    margin: 15px;
+    font-size: 20px;
     margin: 15px;
     font-size: 20px;
     ;
@@ -38,18 +43,25 @@ form {
     background-color: rgb(31, 137, 158);
     width: 130px;
     height: 40px;
+    width: 130px;
+    height: 40px;
     color: aliceblue;
+    border-radius: 10px;
     border-radius: 10px;
     border: none;
     margin: 10px;
+    font-size: 20px;
     font-size: 20px;
 
 }
 
 .erase {
     background-color: rgb(86, 235, 86);
+    background-color: rgb(86, 235, 86);
     width: 80px;
     height: 30px;
+    color: white;
+    border-radius: 10px;
     color: white;
     border-radius: 10px;
     border: none;
@@ -62,6 +74,8 @@ form {
     margin: 20px;
     color: white;
     border-color: rgb(31, 137, 158);
+    width: 40%;
+    height: 30px;
     width: 40%;
     height: 30px;
     border-radius: 3px;
@@ -103,9 +117,12 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: left;
+    justify-content: left;
     align-items: center;
     border: 10px solid palevioletred;
+    border: 10px solid palevioletred;
     border-radius: 3px;
+    padding: 5px;
     padding: 5px;
     margin: 5px;
     font-family: 'Courier New', Courier, monospace;
@@ -118,7 +135,12 @@ form {
     justify-content: center;
     text-align: center;
     flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
     border-radius: 3px;
+    border: 10px solid #ebff9f;
     border: 10px solid #ebff9f;
     font-family: 'Courier New', Courier, monospace;
     padding: 5px;
@@ -173,6 +195,7 @@ form {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    justify-content: center;
     align-items: center;
 
     margin: 3%;
@@ -183,6 +206,7 @@ form {
 
 .img {
     width: 150px;
+    height: 200px;
     height: 200px;
     object-fit: contain;
     margin: 5px;
@@ -198,6 +222,7 @@ form {
     color: aqua;
     font-size: 1.2rem;
     font-family: 'Courier New', Courier, monospace;
+    margin-left: 5%;
     margin-left: 5%;
     font-style: italic;
 }
