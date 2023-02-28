@@ -51,7 +51,6 @@ function renderFilms() {
     // con esto pinto cada card
 
     html += `<article class= "card ${classFavorite} js-list-anime" id="${anime.mal_id}">`;
-    html += `<p class= "titles" >${anime.type}</p>`;
     if (
       anime.images.jpg.image_url ===
       "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png"
@@ -99,14 +98,6 @@ const listenerSeries = () => {
   }
 };
 
-function handelLog() {
-  for (const li of favoritesList) {
-    console.log(li.title);
-  }
-}
-
-log.addEventListener("click", handelLog);
-
 const removeMsg = () => (ad.innerHTML = "");
 
 function notFound() {
@@ -115,9 +106,8 @@ function notFound() {
   );
 
   if (datas.length === 0) {
-    ad.innerHTML = "¡Introduce un título!";
-    setTimeout(removeMsg, 3000);
-  } else {
     ad.innerHTML = "¡Título no encontrado!";
+  } else {
+    ad.innerHTML = "";
   }
 }

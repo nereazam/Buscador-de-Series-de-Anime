@@ -18,9 +18,9 @@ function callServer() {
 
       renderFilms(result);
     });
-
-  //.catch((error) => console.log(`Ha sucedido un error: ${error}`))
 }
+  //.catch ((error) => console.log(`Ha sucedido un error: ${error}`))
+
 function handelClickServer(ev) {
   ev.preventDefault();
   callServer();
